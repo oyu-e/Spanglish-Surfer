@@ -1,0 +1,37 @@
+services:
+  server_a:
+    build:
+      context: ./servers/server_a
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - server_b
+      - mongo
+    networks:
+      - spanglish_network
+
+  server_b:
+    build:
+      context: ./servers/server_b
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    networks:
+      - spanglish_network
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - spanglish_network
+
+networks:
+  spanglish_network:
+    driver: bridge

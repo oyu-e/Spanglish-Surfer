@@ -1,0 +1,45 @@
+body {
+  width: 600px;
+  height: 400px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Underline the text */
+.underlined-text {
+  text-decoration: underline;
+  position: relative; /* Necessary for positioning the bubble */
+  cursor: pointer;
+}
+
+/* Hover bubble */
+.underlined-text:hover::after {
+  content: "Hi!";
+  position: absolute;
+  top: -25px; /* Adjust position above the text */
+  left: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  z-index: 1000;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  display: block;
+}
+
+/* Hide bubble when not hovered */
+.underlined-text::after {
+  display: none;
+}

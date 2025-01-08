@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: server-a
+    runtime: docker
+    dockerfilePath: ./servers/server_a/Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+
+  - type: web
+    name: server-b
+    runtime: docker
+    dockerfilePath: ./servers/server_b/Dockerfile
+    envVars:
+      - key: PORT
+        value: 8001
