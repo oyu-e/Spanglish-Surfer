@@ -93,7 +93,8 @@ docker-compose up --build
 
 The app can be deployed using Render with the provided render.yaml configuration file.
 
-Troubleshooting Render Deployment
+# Troubleshooting Render Deployment
+
 Ensure all services defined in render.yaml are correctly set up in your Render dashboard.
 Check Render logs for deployment errors and fix any issues with dependencies or configurations.
 If deployment fails, verify Dockerfile compatibility with Render's runtime.
